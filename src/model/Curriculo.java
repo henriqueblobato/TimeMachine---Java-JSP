@@ -7,17 +7,20 @@ public class Curriculo {
     private String nome;
     private String dataNascimento;
     private String email;
+    private String endereco;
     private String telefone;
-    private Endereco endereco;
+//    private Endereco endereco;
     private String linguagens;
-    private String diferenciais;
     private String linkGit;
-    private Experiencia experiencia;
+    private String experiencia;
+    private String diferenciais;
+//    private Experiencia experiencia;
+    
     
     public Curriculo() {}
     
-	public Curriculo(int id, String nome, String dataNascimento, String email, String telefone, Endereco endereco,
-			String linguagens, String diferenciais, String linkGit, Experiencia experiencia) {
+	public Curriculo(int id, String nome, String dataNascimento, String email, String telefone, String endereco,
+			String linguagens, String diferenciais, String linkGit, String experiencia) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -60,10 +63,10 @@ public class Curriculo {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public Endereco getEndereco() {
+	public String getEndereco() {
 		return endereco;
 	}
-	public void setEndereco(Endereco endereco) {
+	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 	public String getLinguagens() {
@@ -84,10 +87,10 @@ public class Curriculo {
 	public void setLinkGit(String linkGit) {
 		this.linkGit = linkGit;
 	}
-	public Experiencia getExperiencia() {
+	public String getExperiencia() {
 		return experiencia;
 	}
-	public void setExperiencia(Experiencia experiencia) {
+	public void setExperiencia(String experiencia) {
 		this.experiencia = experiencia;
 	}
     

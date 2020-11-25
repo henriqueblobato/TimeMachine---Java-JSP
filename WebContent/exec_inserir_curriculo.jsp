@@ -1,5 +1,7 @@
 <%@page import="DAO.AlunoDAO"%>
+<%@page import="DAO.CurriculoDAO"%>
 <%@page import="model.Aluno"%>
+<%@page import="model.Curriculo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -10,21 +12,28 @@
     <body>
         <%
             try{
-                Aluno a = new Aluno();
-                AlunoDAO dao=new AlunoDAO();
-                if(request.getParameter("nome").equals("")){
+            	
+            	Curriculo c = new Curriculo();
+            	CurriculoDAO cDao = new CurriculoDAO();
+            	
+            	if(request.getParameter("nome").equals("")){
                     response.sendRedirect("cadastro.jsp");
                 }else{
-                    a.setNome(request.getParameter("nome"));
-                    a.setIdade(Integer.parseInt(
-                            request.getParameter("idade")));
-                    a.setTelefone(
-                            request.getParameter("telefone"));
-                    dao.inserir(a);
-                    response.sendRedirect("cadastro.jsp");
+                	c.setNome(request.getParameter("nome"));
+                	c.setDataNascimento(request.getParameter("dataNascimento"));
+                	c.setEmail(request.getParameter("email"));
+                	c.setTelefone(request.getParameter("telefone"));
+                	c.setLinguagens(request.getParameter("linguagens"));
+                	c.setDiferenciais(request.getParameter("diferenciais"));
+                	c.setLinkGit(request.getParameter("linkGit"));
+                	c.setExperiencia(request.getParameter("experiencia"));
+                	
+                    cDao.inserir(c);
+                    
+                    response.sendRedirect("cadastro2.jsp");
                 }
             }catch(Exception e){
-                out.print("Erro ao inserir!");
+                out.print("Erro ao inserir!" + e.getMessage());
             }
         %>
     </body>

@@ -61,7 +61,11 @@ public class Experiencia {
     
     @Override
     public String toString() {
-    	return super.toString();
+    	return Integer.toString(this.id) + ";;" + 
+    			this.nome + ";;" +
+    			this.dataInicio + ";;" +
+    			this.dataFim + ";;" +
+    			this.atividades + ";;";
     }
             
 }

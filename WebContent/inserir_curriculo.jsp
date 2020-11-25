@@ -11,14 +11,37 @@
     </head>
     <body>
         <form action="exec_inserir_curriculo.jsp" method="POST">
+            
             <label>Nome:</label><br>
             <input type="text" name="nome"><br>
+            
             <label>Data nascimento:</label><br>
-            <input type="number" name="idade"><br>
+            <input type="number" name="idade" placeholder="dd/mm/yyyy"><br>
+            
             <label>Email</label><br>
             <input type="text" name="telefone"><br>
+            
+            <label>Telefone</label><br>
+            <input type="text" name="telefone"><br>
+            
+            <label>Linguagens</label><br>
+            <input type="text" name="telefone"><br>
+            
+            <label>Diferenciais</label><br>
+            <input type="text" name="telefone"><br>
+            
+            <label>Link Github</label><br>
+            <input type="text" name="telefone"><br>
+            
+            <label>Experiência</label><br>
+            <input type="text" name="telefone"><br>
+            
             <button type="submit">Inserir</button>
         </form>
         <a href="cadastro.jsp"><button>Cancelar</button></a>
     </body>
 </html>
+
+<script>
+
+</script>

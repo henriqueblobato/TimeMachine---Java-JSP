@@ -17,11 +17,16 @@ public class CurriculoDAO {
         PreparedStatement stmt;
         try{
             stmt = conn.prepareStatement(
-              "insert into curriculos(nome,dataNascimento,email,telefone) values(?,?,?,?)");
+              "insert into curriculos(nome,dataNascimento,email,endereco,telefone,linguagens,linkGit,experiencia,diferenciais) values(?,?,?,?,?,?,?,?,?)");
             stmt.setString(1,a.getNome());
             stmt.setString(2,a.getDataNascimento());
             stmt.setString(3,a.getEmail());
-            stmt.setString(4,a.getTelefone());
+            stmt.setString(4,a.getEndereco());
+            stmt.setString(5,a.getTelefone());
+            stmt.setString(6,a.getLinguagens());
+            stmt.setString(7,a.getLinkGit());
+            stmt.setString(8,a.getExperiencia());
+            stmt.setString(9,a.getDiferenciais());
             stmt.execute();
             stmt.close();
         }catch(Exception e){
@@ -69,6 +74,11 @@ public class CurriculoDAO {
                a.setDataNascimento(rs.getString("dataNascimento"));
                a.setEmail(rs.getString("email"));
                a.setTelefone(rs.getString("telefone"));
+               
+               a.setLinguagens(rs.getString("linguagens"));
+               a.setDiferenciais(rs.getString("diferenciais"));
+               a.setLinkGit(rs.getString("linkGit"));
+               a.setExperiencia(rs.getString("experiencia"));
                
                lista.add(a);
            }
