@@ -323,7 +323,7 @@ $(document).ready(function(){
 		                	out.print("<td>" + lista.get(i).getLinkGit() + "</td>");
 		                	out.print("<td>");
 		                	out.print("<a href='#editEmployeeModal' class='edit' data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>");
-		                	out.print("<a href='#deleteEmployeeModal' class='delete' data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>");
+		                	out.print("<a href='#deleteEmployeeModal' id='curriculo"+lista.get(i).getId()+"' class='delete' data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>");
 		                	out.print("</td>");
 		                	out.print("</tr>");
 		                }
@@ -391,12 +391,12 @@ $(document).ready(function(){
 		                	out.print("<td>" + lista.get(i).getLinkGit() + "</td>");
 		                	out.print("<td>");
 		                	out.print("<a href='#editEmployeeModal' class='edit' data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>");
-		                	out.print("<a href='#deleteEmployeeModal' class='delete' data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>");
+		                	out.print("<a href='#deleteEmployeeModal' id='vaga"+lista.get(i).getId()+"' class='delete' data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>");
 		                	out.print("</td>");
 		                	out.print("</tr>");
 		                }
-		            	}catch(Exception e){
-		            		out.print(e.getMessage());
+	            	}catch(Exception e){
+	            		out.print(e.getMessage());
 	            	}
 	           		 %>
 					
@@ -440,7 +440,7 @@ $(document).ready(function(){
 					</div>
 					<div class="form-group">
 						<label>Linguagens</label>
-						<textarea name="linguagens" type="text" class="form-control" required></textarea>
+						<textarea name="linguagens" class="form-control" required></textarea>
 					</div>
 					<div class="form-group">
 						<label>Link Github</label>
@@ -448,11 +448,11 @@ $(document).ready(function(){
 					</div>
 					<div class="form-group">b
 						<label>Experiência</label>
-						<textarea name="experiencia" type="text" class="form-control" required></textarea>
+						<textarea name="experiencia" class="form-control" required></textarea>
 					</div>
 					<div class="form-group">
 						<label>Diferenciais</label>
-						<textarea name="diferenciais" type="text" class="form-control" required></textarea>
+						<textarea name="diferenciais" class="form-control" required></textarea>
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -504,7 +504,7 @@ $(document).ready(function(){
 <div id="deleteEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form>
+			<form action="exec_excluir_curriculo.jsp">
 				<div class="modal-header">						
 					<h4 class="modal-title">Delete Employee</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
